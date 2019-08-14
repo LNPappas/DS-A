@@ -1,16 +1,12 @@
+import string
 def LongestWord(sen): 
 
-    s = iter(''.join(x for x in sen if x.isalpha() or x is ' '))
-    current = longest = ''
-    for x in s:
-        if x == ' ':
-            if len(longest) < len(current):
-                longest = current 
-            current = ''
-        else:
-            current += x
-    if len(longest) < len(current):
-        longest = current
+    sen = sen.translate(str.maketrans('','', "()/'!\@#$%^&*()_-+={[}]|\?.>,<`~:;"))
+    l = sen.split(' ')
+    longest = ''
+    for x in l:
+        if len(longest) < len(x):
+            longest = x
     return longest
 
 if __name__ == "__main__":
