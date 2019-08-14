@@ -1,20 +1,18 @@
-import string
-
 def LongestWord(sen): 
 
-    exclude = set(string.punctuation)
-    s = ''.join(x for x in sen if x not in exclude)
-    s = iter(s)
-    longest = ''
-    current = ''
+    s = iter(''.join(x for x in sen if x.isalpha() or x is ' '))
+    current = longest = ''
     for x in s:
-        if x != ' ':
-            current += x
-        longest = max(len(longest), len(current))
         if x == ' ':
+            if len(longest) < len(current):
+                longest = current 
             current = ''
-    
+        else:
+            current += x
+    if len(longest) < len(current):
+        longest = current
     return longest
 
 if __name__ == "__main__":
     print(LongestWord("What is the longest word in this string?"))
+    print(LongestWord("fun&!! time"))
