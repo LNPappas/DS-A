@@ -2,7 +2,8 @@ from node import Node
 class Linked_list():
     
     def __init__(self, head):
-        self.head = head
+        self.head = Node()
+        self.head.set_data(head)
     
     def insert(self, value):
         node = Node(value)
@@ -51,12 +52,12 @@ class Linked_list():
         return current
 
 if __name__ == "__main__":
-    link = Linked_list('Head')
+    link = Linked_list(1)
     link.insert(2)
     link.insert(3)
-    link.insert('tail')
+    link.insert(4)
     link.remove(3)
-    #print("This size of the list is:", link.size())
-    #link.print_list()
+    print("This size of the list is:", link.size())
+    link.print_list()
     
     

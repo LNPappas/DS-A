@@ -15,4 +15,8 @@ class Node(object):
 
     def set_nex(self,new):
         self.nex = new
+
+    
+    def set_data(self,new):
+        self.data = new
         
