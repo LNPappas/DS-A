@@ -1,10 +1,11 @@
 class Node(object):
 
-    def __init__(self,data=None,nex=None):
+    def __init__(self,data=None,nex=None,prev=None):
         self.data = data
         self.nex = nex
-
+        self.prev = prev
     
+
     def get_data(self):
         return self.data
 
@@ -19,4 +20,4 @@ class Node(object):
     
     def set_data(self,new):
         self.data = new
-        
+
