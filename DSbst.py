@@ -1,9 +1,9 @@
 class Node():
 
     def __init__(self, value=None):
+        self.value = value
         self.left = None
         self.right = None
-        self.value = value
 
 
 class BST():
@@ -15,14 +15,13 @@ class BST():
 
     def insert(self, value):
         
-        new = Node()
-        current = Node()
-        new.value = value
+        new = Node(value)
+
         if self.root == None:
             self.root = new
             self.all.append(value)
         else:
-            current.value = self.root.value
+            current = self.root
             while(True):
                 if new.value < current.value:
                     if current.left == None:
@@ -40,8 +39,7 @@ class BST():
     
 
     def lookup(self, value):
-        current = Node()
-        current.value = self.root.value
+        current = Node(self.root.value)
         while True:
             if current.value == None:
                 return False
