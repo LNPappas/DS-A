@@ -5,7 +5,7 @@
          self.left = None
          self.right = None
 
-         
+
 INT_MAX = 4294967296
 INT_MIN = -4294967296
 
@@ -32,5 +32,7 @@ class Solution(object):
             # tightening the min or max constraint 
             return (isBSTUtil(node.left, mini, node.val -1) and
                   isBSTUtil(node.right, node.val+1, maxi)) 
-        
+
         return (isBSTUtil(node, INT_MIN, INT_MAX)) 
+
+
