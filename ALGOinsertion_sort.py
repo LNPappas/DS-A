@@ -9,5 +9,5 @@ def insertion(array):
     return array
 
 if __name__ == "__main__":
-    l = [3,1,4,7,2,8,1,0]
+    l = [3,1,4,7,2,8,1]
     print(insertion(l))
