@@ -67,5 +67,34 @@ def modify_bit(x, position, state=1):
     return (x & ~mask) | (-state & mask)
 print('modify bit 0b000110: ', modify_bit(6,5), bin(modify_bit(6,5)))
 
+def even_bit(x):
+    '''
+    if bit is even returns True else False
+    '''
+    mask = 1
+    return x&1==0
 
+print('even_bit 000000001:', even_bit(1))
+print('even_bit 000000010:', even_bit(2))
 
+def powerTwo_bit(x):
+    '''
+    checks if bit is power of two
+    '''
+    return (x & x-1) == 0
+print('powerTwo_bit 000000001:', powerTwo_bit(1))
+print('powerTwo_bit 000000010:', powerTwo_bit(2))
+
+def countDiff_bit(x,y):
+    '''
+    counts # of bits different btwn two #'s
+    '''
+    count = 0
+    for position in range(0,8):
+        mask = 1 << position
+        if x&mask != y&mask:
+            count +=1
+    return count
+print('Count different bits 00000001 & 00000011: ', countDiff_bit(1,3))
+print('Count different bits 00000001 & 00000010: ', countDiff_bit(1,2))
+print('Count different bits 00000001 & 00000001: ', countDiff_bit(1,1))
