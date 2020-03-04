@@ -1,6 +1,6 @@
 def maxProduct(array):
     '''
-        Function returns the maximum product of a contiguous
+        Function returns the maximum product of a continuous
         subarray with the largest product.
         Array contains at least one number
         O(n)
