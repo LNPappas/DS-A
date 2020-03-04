@@ -5,6 +5,8 @@ def maxSubarray(array):
         from of a given array.
         O(n)
     '''
+    if not array:
+        return 0
     # create variable for current value in array and 
     # the maximum value so far (the result)
     # set to first element of array
