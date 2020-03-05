@@ -11,12 +11,16 @@ class LinkedList():
     def __init__(self, data):
         self.head = Node(data)
         self.tail = self.head
+        # initialize size value as one
+        self.size = 1
 
     # add to end of list, set to tail
     def append(self, data):
         newNode = Node(data)
         self.tail.nextNode = newNode
         self.tail = newNode
+        # increase size
+        self.size +=1
 
     # print list as string
     def __repr__(self):
@@ -39,6 +43,8 @@ class LinkedList():
                 return False
         # set previous Node to next Node removing data
         pre.nextNode = temp.nextNode
+        # decrease size
+        self.size -=1
         return True
 
     # insert a value at a given index
@@ -68,6 +74,8 @@ class LinkedList():
         # if newnode inserted at end, make it the tail
         if temp == None:
             self.tail = newNode
+        # increase size
+        self.size +=1
 
     # returns start/head of linkedList
     def start(self):
@@ -86,6 +94,10 @@ class LinkedList():
             else:
                 temp = temp.nextNode
         return False
+    
+    # returns size/len of linkedlist using special method
+    def __len__(self):
+        return self.size
              
 
 if __name__ == "__main__":
@@ -106,6 +118,7 @@ if __name__ == "__main__":
     print('End/Tail: ',l1.end())
     print('lookup(47): ',  l1.lookup(47))
     print('lookup("frogs"): ',l1.lookup('frogs'))
+    print('length/size of l1:',len(l1))
 
         
 
